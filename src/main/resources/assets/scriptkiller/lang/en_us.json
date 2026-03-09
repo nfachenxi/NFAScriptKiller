@@ -22,5 +22,14 @@
   "scriptkiller.configuration.enhanced_groups.group_summary": "Show Group Summary on Join",
   "scriptkiller.configuration.enhanced_groups.group_summary.tooltip": "Determines if a summary of all groups should be shown when a player joins the server",
   "scriptkiller.configuration.enhanced_groups.force_group_type": "Force Group Type",
-  "scriptkiller.configuration.enhanced_groups.force_group_type.tooltip": "Forces all groups to be of the given type\nOFF - No group type is forced\nNORMAL - All groups are forced to be normal groups\nOPEN - All groups are forced to be open groups\nISOLATED - All groups are forced to be isolated groups"
+  "scriptkiller.configuration.enhanced_groups.force_group_type.tooltip": "Forces all groups to be of the given type\nOFF - No group type is forced\nNORMAL - All groups are forced to be normal groups\nOPEN - All groups are forced to be open groups\nISOLATED - All groups are forced to be isolated groups",
+  
+  "key.categories.scriptkiller": "NFA (The Fourth Area)",
+  "key.scriptkiller.toggle_coordinate_hud": "Toggle Coordinate Display",
+  
+  "scriptkiller.configuration.coordinate_hud": "Coordinate HUD",
+  "scriptkiller.configuration.coordinate_hud.tooltip": "Coordinate display related settings",
+  "config.scriptkiller.show_coordinate_hud": "Show Coordinate HUD",
+  "config.scriptkiller.coordinate_hud_margin_right": "Coordinate HUD Right Margin",
+  "config.scriptkiller.coordinate_hud_margin_bottom": "Coordinate HUD Bottom Margin"
 }

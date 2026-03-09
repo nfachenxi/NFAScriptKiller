@@ -22,5 +22,14 @@
   "scriptkiller.configuration.enhanced_groups.group_summary": "加入时显示组摘要",
   "scriptkiller.configuration.enhanced_groups.group_summary.tooltip": "决定玩家加入服务器时是否显示所有组的摘要",
   "scriptkiller.configuration.enhanced_groups.force_group_type": "强制组类型",
-  "scriptkiller.configuration.enhanced_groups.force_group_type.tooltip": "强制所有组为指定类型\nOFF - 不强制任何组类型\nNORMAL - 所有组强制为普通组\nOPEN - 所有组强制为开放组\nISOLATED - 所有组强制为隔离组"
+  "scriptkiller.configuration.enhanced_groups.force_group_type.tooltip": "强制所有组为指定类型\nOFF - 不强制任何组类型\nNORMAL - 所有组强制为普通组\nOPEN - 所有组强制为开放组\nISOLATED - 所有组强制为隔离组",
+  
+  "key.categories.scriptkiller": "第四领域",
+  "key.scriptkiller.toggle_coordinate_hud": "切换坐标显示",
+  
+  "scriptkiller.configuration.coordinate_hud": "坐标HUD",
+  "scriptkiller.configuration.coordinate_hud.tooltip": "坐标显示相关配置",
+  "config.scriptkiller.show_coordinate_hud": "显示坐标HUD",
+  "config.scriptkiller.coordinate_hud_margin_right": "坐标HUD右边距",
+  "config.scriptkiller.coordinate_hud_margin_bottom": "坐标HUD下边距"
 }
