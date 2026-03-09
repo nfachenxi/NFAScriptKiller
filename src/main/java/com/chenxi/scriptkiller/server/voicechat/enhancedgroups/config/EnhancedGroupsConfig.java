@@ -1,4 +1,4 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.config;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
@@ -19,14 +19,18 @@ public class EnhancedGroupsConfig {
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
-        builder.comment("Enhanced Groups Configuration").push("enhanced_groups");
+        builder.comment("Enhanced Groups Configuration")
+                .translation("scriptkiller.configuration.enhanced_groups")
+                .push("enhanced_groups");
 
         DEFAULT_INSTANT_GROUP_RANGE = builder
                 .comment("The default range for the /instantgroup command if no range was provided")
+                .translation("scriptkiller.configuration.enhanced_groups.default_instant_group_range")
                 .defineInRange("default_instant_group_range", 128.0, 1.0, Double.MAX_VALUE);
 
         INSTANT_GROUP_NAME = builder
                 .comment("The name of the instant group")
+                .translation("scriptkiller.configuration.enhanced_groups.instant_group_name")
                 .define("instant_group_name", "Instant Group");
 
         INSTANT_GROUP_COMMAND_PERMISSION = builder
@@ -36,6 +40,7 @@ public class EnhancedGroupsConfig {
                         "OPS - Operators can use this command",
                         "NOONE - The command can't be used by anyone"
                 )
+                .translation("scriptkiller.configuration.enhanced_groups.instant_group_command_permission")
                 .defineEnum("instant_group_command_permission", PermissionType.EVERYONE);
 
         PERSISTENT_GROUP_COMMAND_PERMISSION = builder
@@ -45,6 +50,7 @@ public class EnhancedGroupsConfig {
                         "OPS - Operators can use this command",
                         "NOONE - The command can't be used by anyone"
                 )
+                .translation("scriptkiller.configuration.enhanced_groups.persistent_group_command_permission")
                 .defineEnum("persistent_group_command_permission", PermissionType.OPS);
 
         AUTO_JOIN_GROUP_COMMAND_PERMISSION = builder
@@ -54,6 +60,7 @@ public class EnhancedGroupsConfig {
                         "OPS - Operators can use this command",
                         "NOONE - The command can't be used by anyone"
                 )
+                .translation("scriptkiller.configuration.enhanced_groups.auto_join_group_command_permission")
                 .defineEnum("auto_join_group_command_permission", PermissionType.EVERYONE);
 
         AUTO_JOIN_GROUP_GLOBAL_COMMAND_PERMISSION = builder
@@ -63,6 +70,7 @@ public class EnhancedGroupsConfig {
                         "OPS - Operators can use this command",
                         "NOONE - The command can't be used by anyone"
                 )
+                .translation("scriptkiller.configuration.enhanced_groups.auto_join_group_global_command_permission")
                 .defineEnum("auto_join_group_global_command_permission", PermissionType.OPS);
 
         FORCE_JOIN_GROUP_COMMAND_PERMISSION = builder
@@ -72,10 +80,12 @@ public class EnhancedGroupsConfig {
                         "OPS - Operators can use this command",
                         "NOONE - The command can't be used by anyone"
                 )
+                .translation("scriptkiller.configuration.enhanced_groups.force_join_group_command_permission")
                 .defineEnum("force_join_group_command_permission", PermissionType.OPS);
 
         GROUP_SUMMARY = builder
                 .comment("Determines if a summary of all groups should be shown when a player joins the server")
+                .translation("scriptkiller.configuration.enhanced_groups.group_summary")
                 .define("group_summary", true);
 
         FORCE_GROUP_TYPE = builder
@@ -86,6 +96,7 @@ public class EnhancedGroupsConfig {
                         "OPEN - All groups are forced to be open groups",
                         "ISOLATED - All groups are forced to be isolated groups"
                 )
+                .translation("scriptkiller.configuration.enhanced_groups.force_group_type")
                 .defineEnum("force_group_type", ForcedGroupType.OFF);
 
         builder.pop();

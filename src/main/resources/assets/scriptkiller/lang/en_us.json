@@ -1,0 +1,26 @@
+{
+  "scriptkiller.configuration.title": "ScriptKiller Configs",
+  "scriptkiller.configuration.section.scriptkiller-enhanced_groups.toml": "Enhanced Groups",
+  "scriptkiller.configuration.section.scriptkiller-enhanced_groups.toml.title": "Enhanced Groups Configuration",
+  
+  "scriptkiller.configuration.enhanced_groups": "Enhanced Groups",
+  "scriptkiller.configuration.enhanced_groups.tooltip": "Enhanced Groups Configuration",
+  "scriptkiller.configuration.enhanced_groups.default_instant_group_range": "Default Instant Group Range",
+  "scriptkiller.configuration.enhanced_groups.default_instant_group_range.tooltip": "The default range for the /instantgroup command if no range was provided",
+  "scriptkiller.configuration.enhanced_groups.instant_group_name": "Instant Group Name",
+  "scriptkiller.configuration.enhanced_groups.instant_group_name.tooltip": "The name of the instant group",
+  "scriptkiller.configuration.enhanced_groups.instant_group_command_permission": "Instant Group Command Permission",
+  "scriptkiller.configuration.enhanced_groups.instant_group_command_permission.tooltip": "The default permission level of the /instantgroup command\nEVERYONE - Every player can use this command\nOPS - Operators can use this command\nNOONE - The command can't be used by anyone",
+  "scriptkiller.configuration.enhanced_groups.persistent_group_command_permission": "Persistent Group Command Permission",
+  "scriptkiller.configuration.enhanced_groups.persistent_group_command_permission.tooltip": "The default permission level of the /persistentgroup command\nEVERYONE - Every player can use this command\nOPS - Operators can use this command\nNOONE - The command can't be used by anyone",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_command_permission": "Auto Join Group Command Permission",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_command_permission.tooltip": "The default permission level of the /autojoingroup command\nEVERYONE - Every player can use this command\nOPS - Operators can use this command\nNOONE - The command can't be used by anyone",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_global_command_permission": "Auto Join Group Global Command Permission",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_global_command_permission.tooltip": "The default permission level of the /autojoingroup global command\nEVERYONE - Every player can use this command\nOPS - Operators can use this command\nNOONE - The command can't be used by anyone",
+  "scriptkiller.configuration.enhanced_groups.force_join_group_command_permission": "Force Join Group Command Permission",
+  "scriptkiller.configuration.enhanced_groups.force_join_group_command_permission.tooltip": "The default permission level of the /forcejoingroup command\nEVERYONE - Every player can use this command\nOPS - Operators can use this command\nNOONE - The command can't be used by anyone",
+  "scriptkiller.configuration.enhanced_groups.group_summary": "Show Group Summary on Join",
+  "scriptkiller.configuration.enhanced_groups.group_summary.tooltip": "Determines if a summary of all groups should be shown when a player joins the server",
+  "scriptkiller.configuration.enhanced_groups.force_group_type": "Force Group Type",
+  "scriptkiller.configuration.enhanced_groups.force_group_type.tooltip": "Forces all groups to be of the given type\nOFF - No group type is forced\nNORMAL - All groups are forced to be normal groups\nOPEN - All groups are forced to be open groups\nISOLATED - All groups are forced to be isolated groups"
+}

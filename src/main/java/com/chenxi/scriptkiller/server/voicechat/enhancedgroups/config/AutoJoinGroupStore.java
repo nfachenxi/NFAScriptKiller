@@ -1,6 +1,6 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.config;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config;
 
-import com.chenxi.scriptkiller.ScriptKiller;
+import com.chenxi.scriptkiller.common.Constants;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -26,7 +26,7 @@ public class AutoJoinGroupStore {
 
     public void load() {
         if (!file.exists()) {
-            ScriptKiller.LOGGER.info("Auto join groups file not found, creating new one");
+            Constants.LOGGER.info("Auto join groups file not found, creating new one");
             save();
             return;
         }
@@ -36,7 +36,7 @@ public class AutoJoinGroupStore {
             Type contentType = new TypeToken<StoreContent>() {}.getType();
             content = gson.fromJson(reader, contentType);
         } catch (Exception e) {
-            ScriptKiller.LOGGER.error("Failed to parse auto join groups", e);
+            Constants.LOGGER.error("Failed to parse auto join groups", e);
         }
         if (content == null) {
             content = new StoreContent();
@@ -48,7 +48,7 @@ public class AutoJoinGroupStore {
             Type playerGroupsType = new TypeToken<Map<UUID, UUID>>() {}.getType();
             Map<UUID, UUID> playerGroups = gson.fromJson(reader, playerGroupsType);
 
-            ScriptKiller.LOGGER.info("Migrated auto join groups config");
+            Constants.LOGGER.info("Migrated auto join groups config");
 
             content = new StoreContent();
             content.playerGroups = playerGroups;
@@ -63,7 +63,7 @@ public class AutoJoinGroupStore {
         try (Writer writer = new FileWriter(file)) {
             gson.toJson(content, writer);
         } catch (Exception e) {
-            ScriptKiller.LOGGER.error("Failed to save auto join groups", e);
+            Constants.LOGGER.error("Failed to save auto join groups", e);
         }
     }
 

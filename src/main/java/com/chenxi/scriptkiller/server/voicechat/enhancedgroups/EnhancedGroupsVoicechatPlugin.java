@@ -1,9 +1,9 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups;
 
-import com.chenxi.scriptkiller.ScriptKiller;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.config.PersistentGroup;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.events.AutoJoinGroupEvents;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.events.ForceGroupTypeEvents;
+import com.chenxi.scriptkiller.common.Constants;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.PersistentGroup;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.event.AutoJoinGroupEvents;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.event.ForceGroupTypeEvents;
 import de.maxhenkel.voicechat.api.ForgeVoicechatPlugin;
 import de.maxhenkel.voicechat.api.Group;
 import de.maxhenkel.voicechat.api.VoicechatApi;
@@ -25,12 +25,12 @@ public class EnhancedGroupsVoicechatPlugin implements VoicechatPlugin {
 
     @Override
     public String getPluginId() {
-        return ScriptKiller.MODID + "_enhanced_groups";
+        return Constants.MODID + "_enhanced_groups";
     }
 
     @Override
     public void initialize(VoicechatApi api) {
-        ScriptKiller.LOGGER.info("Enhanced Groups plugin initialized");
+        Constants.LOGGER.info("Enhanced Groups plugin initialized");
     }
 
     @Override
@@ -55,6 +55,6 @@ public class EnhancedGroupsVoicechatPlugin implements VoicechatPlugin {
             EnhancedGroupsManager.PERSISTENT_GROUP_STORE.addCached(vcGroup.getId(), group);
         }
 
-        ScriptKiller.LOGGER.info("Added {} persistent groups", groups.size());
+        Constants.LOGGER.info("Added {} persistent groups", groups.size());
     }
 }

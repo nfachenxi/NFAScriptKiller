@@ -1,4 +1,4 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;

@@ -1,7 +1,7 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.events;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.event;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.EnhancedGroupsConfig;
 import de.maxhenkel.voicechat.api.Group;
 import de.maxhenkel.voicechat.api.VoicechatConnection;
 import net.minecraft.ChatFormatting;
@@ -27,7 +27,7 @@ public class GroupSummaryEvents {
             return;
         }
 
-        if (!EnhancedGroupsManager.CONFIG.GROUP_SUMMARY.get()) {
+        if (!EnhancedGroupsConfig.GROUP_SUMMARY.get()) {
             return;
         }
         if (EnhancedGroupsVoicechatPlugin.SERVER_API == null) {

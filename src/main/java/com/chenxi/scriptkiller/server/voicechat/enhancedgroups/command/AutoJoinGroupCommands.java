@@ -1,7 +1,8 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.config.PersistentGroup;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsManager;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.EnhancedGroupsConfig;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.PersistentGroup;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
@@ -19,7 +20,7 @@ public class AutoJoinGroupCommands {
     public static void register(LiteralArgumentBuilder<CommandSourceStack> voicechatNode) {
         voicechatNode.then(
                 Commands.literal("autojoingroup")
-                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsManager.CONFIG.AUTO_JOIN_GROUP_COMMAND_PERMISSION.get()))
+                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsConfig.AUTO_JOIN_GROUP_COMMAND_PERMISSION.get()))
                         .then(Commands.literal("set")
                                 .then(Commands.argument("group_name", StringArgumentType.string())
                                         .executes(ctx -> setByName(ctx, StringArgumentType.getString(ctx, "group_name"), null))
@@ -38,7 +39,7 @@ public class AutoJoinGroupCommands {
                                 .executes(AutoJoinGroupCommands::remove)
                         )
                         .then(Commands.literal("global")
-                                .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsManager.CONFIG.AUTO_JOIN_GROUP_GLOBAL_COMMAND_PERMISSION.get()))
+                                .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsConfig.AUTO_JOIN_GROUP_GLOBAL_COMMAND_PERMISSION.get()))
                                 .then(Commands.literal("set")
                                         .then(Commands.argument("group_name", StringArgumentType.string())
                                                 .executes(ctx -> setGlobalByName(ctx, StringArgumentType.getString(ctx, "group_name")))

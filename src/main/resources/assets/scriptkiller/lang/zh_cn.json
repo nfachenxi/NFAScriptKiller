@@ -1,0 +1,26 @@
+{
+  "scriptkiller.configuration.title": "剧本杀配置",
+  "scriptkiller.configuration.section.scriptkiller-enhanced_groups.toml": "增强语音组",
+  "scriptkiller.configuration.section.scriptkiller-enhanced_groups.toml.title": "增强语音组配置",
+  
+  "scriptkiller.configuration.enhanced_groups": "增强语音组",
+  "scriptkiller.configuration.enhanced_groups.tooltip": "增强语音组配置",
+  "scriptkiller.configuration.enhanced_groups.default_instant_group_range": "默认即时组范围",
+  "scriptkiller.configuration.enhanced_groups.default_instant_group_range.tooltip": "如果未提供范围，/instantgroup 命令的默认范围",
+  "scriptkiller.configuration.enhanced_groups.instant_group_name": "即时组名称",
+  "scriptkiller.configuration.enhanced_groups.instant_group_name.tooltip": "即时组的名称",
+  "scriptkiller.configuration.enhanced_groups.instant_group_command_permission": "即时组命令权限",
+  "scriptkiller.configuration.enhanced_groups.instant_group_command_permission.tooltip": "/instantgroup 命令的默认权限等级\nEVERYONE - 所有玩家都可以使用此命令\nOPS - 管理员可以使用此命令\nNOONE - 任何人都不能使用此命令",
+  "scriptkiller.configuration.enhanced_groups.persistent_group_command_permission": "持久组命令权限",
+  "scriptkiller.configuration.enhanced_groups.persistent_group_command_permission.tooltip": "/persistentgroup 命令的默认权限等级\nEVERYONE - 所有玩家都可以使用此命令\nOPS - 管理员可以使用此命令\nNOONE - 任何人都不能使用此命令",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_command_permission": "自动加入组命令权限",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_command_permission.tooltip": "/autojoingroup 命令的默认权限等级\nEVERYONE - 所有玩家都可以使用此命令\nOPS - 管理员可以使用此命令\nNOONE - 任何人都不能使用此命令",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_global_command_permission": "全局自动加入组命令权限",
+  "scriptkiller.configuration.enhanced_groups.auto_join_group_global_command_permission.tooltip": "/autojoingroup global 命令的默认权限等级\nEVERYONE - 所有玩家都可以使用此命令\nOPS - 管理员可以使用此命令\nNOONE - 任何人都不能使用此命令",
+  "scriptkiller.configuration.enhanced_groups.force_join_group_command_permission": "强制加入组命令权限",
+  "scriptkiller.configuration.enhanced_groups.force_join_group_command_permission.tooltip": "/forcejoingroup 命令的默认权限等级\nEVERYONE - 所有玩家都可以使用此命令\nOPS - 管理员可以使用此命令\nNOONE - 任何人都不能使用此命令",
+  "scriptkiller.configuration.enhanced_groups.group_summary": "加入时显示组摘要",
+  "scriptkiller.configuration.enhanced_groups.group_summary.tooltip": "决定玩家加入服务器时是否显示所有组的摘要",
+  "scriptkiller.configuration.enhanced_groups.force_group_type": "强制组类型",
+  "scriptkiller.configuration.enhanced_groups.force_group_type.tooltip": "强制所有组为指定类型\nOFF - 不强制任何组类型\nNORMAL - 所有组强制为普通组\nOPEN - 所有组强制为开放组\nISOLATED - 所有组强制为隔离组"
+}

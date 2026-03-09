@@ -1,4 +1,4 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
 import com.google.gson.JsonObject;
 import net.minecraft.commands.CommandBuildContext;

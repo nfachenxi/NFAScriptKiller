@@ -1,6 +1,6 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.config;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config;
 
-import com.chenxi.scriptkiller.ScriptKiller;
+import com.chenxi.scriptkiller.common.Constants;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -27,7 +27,7 @@ public class PersistentGroupStore {
 
     public void load() {
         if (!file.exists()) {
-            ScriptKiller.LOGGER.info("Persistent groups file not found, creating new one");
+            Constants.LOGGER.info("Persistent groups file not found, creating new one");
             save();
             return;
         }
@@ -35,7 +35,7 @@ public class PersistentGroupStore {
             Type groupListType = new TypeToken<ArrayList<PersistentGroup>>() {}.getType();
             groups = gson.fromJson(reader, groupListType);
         } catch (Exception e) {
-            ScriptKiller.LOGGER.error("Failed to parse persistent groups", e);
+            Constants.LOGGER.error("Failed to parse persistent groups", e);
         }
         if (groups == null) {
             groups = new ArrayList<>();
@@ -52,7 +52,7 @@ public class PersistentGroupStore {
         try (Writer writer = new FileWriter(file)) {
             gson.toJson(groups, writer);
         } catch (Exception e) {
-            ScriptKiller.LOGGER.error("Failed to save persistent groups", e);
+            Constants.LOGGER.error("Failed to save persistent groups", e);
         }
     }
 

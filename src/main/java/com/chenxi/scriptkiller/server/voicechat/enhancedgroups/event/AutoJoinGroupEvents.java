@@ -1,6 +1,6 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.events;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.event;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsManager;
 import de.maxhenkel.voicechat.api.Group;
 import de.maxhenkel.voicechat.api.VoicechatConnection;
 import de.maxhenkel.voicechat.api.events.PlayerConnectedEvent;

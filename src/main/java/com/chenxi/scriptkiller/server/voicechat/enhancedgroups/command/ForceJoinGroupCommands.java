@@ -1,7 +1,7 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.EnhancedGroupsConfig;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import de.maxhenkel.voicechat.api.Group;
@@ -17,7 +17,7 @@ public class ForceJoinGroupCommands {
     public static void register(LiteralArgumentBuilder<CommandSourceStack> voicechatNode) {
         voicechatNode.then(
                 Commands.literal("forcejoingroup")
-                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsManager.CONFIG.FORCE_JOIN_GROUP_COMMAND_PERMISSION.get()))
+                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsConfig.FORCE_JOIN_GROUP_COMMAND_PERMISSION.get()))
                         .then(Commands.argument("player", EntityArgument.player())
                                 .executes(ForceJoinGroupCommands::execute)
                         )

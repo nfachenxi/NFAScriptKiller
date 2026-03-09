@@ -1,6 +1,6 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.config.PermissionType;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.PermissionType;
 import net.minecraft.commands.CommandSourceStack;
 
 public class PermissionHelper {

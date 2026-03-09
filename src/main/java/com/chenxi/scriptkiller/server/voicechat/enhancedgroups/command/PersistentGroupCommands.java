@@ -1,8 +1,9 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.config.PersistentGroup;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsManager;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.EnhancedGroupsConfig;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.PersistentGroup;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -25,7 +26,7 @@ public class PersistentGroupCommands {
     public static void register(LiteralArgumentBuilder<CommandSourceStack> voicechatNode) {
         voicechatNode.then(
                 Commands.literal("persistentgroup")
-                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsManager.CONFIG.PERSISTENT_GROUP_COMMAND_PERMISSION.get()))
+                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsConfig.PERSISTENT_GROUP_COMMAND_PERMISSION.get()))
                         .then(Commands.literal("add")
                                 .then(Commands.argument("name", StringArgumentType.string())
                                         .executes(ctx -> add(ctx, StringArgumentType.getString(ctx, "name"), Group.Type.NORMAL, false, null))

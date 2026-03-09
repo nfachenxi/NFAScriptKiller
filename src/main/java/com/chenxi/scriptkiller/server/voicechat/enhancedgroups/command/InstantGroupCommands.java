@@ -1,7 +1,8 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.command;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.command;
 
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsManager;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.EnhancedGroupsVoicechatPlugin;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.EnhancedGroupsConfig;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
@@ -20,7 +21,7 @@ public class InstantGroupCommands {
     public static void register(LiteralArgumentBuilder<CommandSourceStack> voicechatNode) {
         voicechatNode.then(
                 Commands.literal("instantgroup")
-                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsManager.CONFIG.INSTANT_GROUP_COMMAND_PERMISSION.get()))
+                        .requires(source -> PermissionHelper.hasPermission(source, EnhancedGroupsConfig.INSTANT_GROUP_COMMAND_PERMISSION.get()))
                         .executes(InstantGroupCommands::executeDefault)
                         .then(Commands.argument("range", DoubleArgumentType.doubleArg(1.0))
                                 .executes(InstantGroupCommands::executeWithRange))
@@ -28,7 +29,7 @@ public class InstantGroupCommands {
     }
 
     private static int executeDefault(CommandContext<CommandSourceStack> context) {
-        return execute(context, EnhancedGroupsManager.CONFIG.DEFAULT_INSTANT_GROUP_RANGE.get());
+        return execute(context, EnhancedGroupsConfig.DEFAULT_INSTANT_GROUP_RANGE.get());
     }
 
     private static int executeWithRange(CommandContext<CommandSourceStack> context) {
@@ -57,7 +58,7 @@ public class InstantGroupCommands {
                 group = playerConnection.getGroup();
             } else {
                 group = EnhancedGroupsVoicechatPlugin.SERVER_API.groupBuilder()
-                        .setName(EnhancedGroupsManager.CONFIG.INSTANT_GROUP_NAME.get())
+                        .setName(EnhancedGroupsConfig.INSTANT_GROUP_NAME.get())
                         .setType(Group.Type.OPEN)
                         .build();
             }

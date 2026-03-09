@@ -1,7 +1,11 @@
 package com.chenxi.scriptkiller;
 
+import com.chenxi.scriptkiller.client.ClientProxy;
+import com.chenxi.scriptkiller.common.Constants;
+
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -10,22 +14,25 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
-// This class will not load on dedicated servers. Accessing client side code from here is safe.
-@Mod(value = ScriptKiller.MODID, dist = Dist.CLIENT)
-// You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = ScriptKiller.MODID, value = Dist.CLIENT)
+/**
+ * 客户端入口类
+ * 仅在客户端加载，处理客户端专属初始化
+ */
+@Mod(value = Constants.MODID, dist = Dist.CLIENT)
+@EventBusSubscriber(modid = Constants.MODID, value = Dist.CLIENT)
 public class ScriptKillerClient {
-    public ScriptKillerClient(ModContainer container) {
-        // Allows NeoForge to create a config screen for this mod's configs.
-        // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
-        // Do not forget to add translations for your config options to the en_us.json file.
+    
+    public ScriptKillerClient(IEventBus modEventBus, ModContainer container) {
+        // 注册配置界面
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        
+        // 初始化客户端代理
+        ClientProxy.init(modEventBus, container);
     }
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        ScriptKiller.LOGGER.info("HELLO FROM CLIENT SETUP");
-        ScriptKiller.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        Constants.LOGGER.info("ScriptKiller client setup");
+        Constants.LOGGER.info("Player name: {}", Minecraft.getInstance().getUser().getName());
     }
 }

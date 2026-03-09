@@ -1,8 +1,8 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.events;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.event;
 
-import com.chenxi.scriptkiller.ScriptKiller;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
-import com.chenxi.scriptkiller.voicechat.enhancedgroups.config.ForcedGroupType;
+import com.chenxi.scriptkiller.common.Constants;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.EnhancedGroupsConfig;
+import com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config.ForcedGroupType;
 import de.maxhenkel.voicechat.api.Group;
 import de.maxhenkel.voicechat.api.VoicechatConnection;
 import de.maxhenkel.voicechat.api.events.CreateGroupEvent;
@@ -17,7 +17,7 @@ public class ForceGroupTypeEvents {
         if (connection == null) {
             return;
         }
-        ForcedGroupType forcedGroupType = EnhancedGroupsManager.CONFIG.FORCE_GROUP_TYPE.get();
+        ForcedGroupType forcedGroupType = EnhancedGroupsConfig.FORCE_GROUP_TYPE.get();
         if (!forcedGroupType.isForced()) {
             return;
         }
@@ -53,7 +53,7 @@ public class ForceGroupTypeEvents {
             passwordField.setAccessible(true);
             return (String) passwordField.get(groupObject);
         } catch (Throwable e) {
-            ScriptKiller.LOGGER.warn("Could not get password of group", e);
+            Constants.LOGGER.warn("Could not get password of group", e);
             return null;
         }
     }

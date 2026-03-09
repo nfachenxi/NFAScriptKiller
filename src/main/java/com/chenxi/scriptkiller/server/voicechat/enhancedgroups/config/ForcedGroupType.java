@@ -1,4 +1,4 @@
-package com.chenxi.scriptkiller.voicechat.enhancedgroups.config;
+package com.chenxi.scriptkiller.server.voicechat.enhancedgroups.config;
 
 import de.maxhenkel.voicechat.api.Group;
 
