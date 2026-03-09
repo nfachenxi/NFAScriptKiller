@@ -2,6 +2,8 @@ package com.chenxi.scriptkiller;
 
 import org.slf4j.Logger;
 
+import com.chenxi.scriptkiller.voicechat.enhancedgroups.EnhancedGroupsManager;
+import com.chenxi.scriptkiller.voicechat.enhancedgroups.command.ModArgumentTypes;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -75,6 +77,8 @@ public class ScriptKiller {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+        // Register custom argument types
+        ModArgumentTypes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ScriptKiller) to respond directly to events.
@@ -86,6 +90,9 @@ public class ScriptKiller {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        // Initialize Enhanced Groups module
+        EnhancedGroupsManager.init(modEventBus, modContainer);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
